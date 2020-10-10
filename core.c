@@ -84,7 +84,7 @@ void popRegister(FILE* dest, int8_t reg)
   char *working = strlen(cmd) + cmd;
   snprintf(working,sizeof(char)*4,"%d",reg);
   strcat(working," }\n");
-  printf("Poping %d\n",reg);
+  printf("Popping %d\n",reg);
   writeString(dest,cmd);
 }
 
