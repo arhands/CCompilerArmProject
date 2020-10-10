@@ -1,0 +1,4 @@
+int32_t test(int8_t num1, int8_t num2, int32_t num3, int16_t num4)
+{
+  return (num1+num2)*(num1-num2);
+}
