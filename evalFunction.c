@@ -50,7 +50,16 @@ void evaluateFunction(FILE* source, FILE* dest)
   int8_t retType = evaluateType(source);
   char funcName[MAX_NAME_LENGTH + 1];
   memset(funcName,0,MAX_NAME_LENGTH + 1);
+  
   char c = getName(source, funcName);
+
+  char buffer[sizeof(MAX_NAME_LENGTH) + sizeof(".global \n")];
+  memset(buffer,0,sizeof(buffer));
+  strcat(buffer,".global ");
+  strcat(buffer,funcName);
+  strcat(buffer,"\n");
+  writeString(dest,buffer);
+
   writeString(dest,funcName);
   writeString(dest,":\n");
   if(c != '(')
